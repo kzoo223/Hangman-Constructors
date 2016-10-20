@@ -14,16 +14,17 @@ hangGame = {
 	currentWrd : null, //the word object
 	startGame : function (wrd){
 		//make sure the user has 10 guesses
-
+		if (this.guessesRemaining == 10){
 		//get a random word from the array
-
+		var randomWord = Math.floor(Math.random()*this.wordBank.length); 
 		//populate currentWrd (made from Word constructor function) object with letters
-
+		this.currentWrd = new Word(this.wordBank(randomWord))
 		this.keepPromptingUser();
-
+		}
 	}, 
 	resetGuessesRemaining : function(){
     // reset guess count for new game	
+    this.guessesRemaining = 10;
 	},
 	keepPromptingUser : function(){
 		var self = this;
