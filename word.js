@@ -45,8 +45,14 @@ var Word = function(wrd){
 	
 	this.wordRender = function() {
 // render the word based on if letters are found or not found
+		var str = "";
+		this.letters.forEach(function(lett){
+			var currLetter = lett.letterRender();
+			str += currLetter
+		});
 		return str;
 	};
 }
 
 // export to use in main.js
+module.exports = Word;
